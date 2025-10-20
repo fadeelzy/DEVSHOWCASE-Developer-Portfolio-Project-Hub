@@ -1,0 +1,114 @@
+# ===============================
+# 🧠 DevShowcase - .gitignore
+# Built for Django + PostgreSQL + JavaScript projects
+# ===============================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.py.class
+*.pyo
+*.pyd
+*.pdb
+
+# --- Virtual Environment ---
+venv/
+env/
+ENV/
+.venv/
+.env/
+venv.bak/
+
+# --- Environment & Secrets ---
+.env
+*.env
+.env.*.local
+*.secret
+*.token
+*.key
+config.json
+
+# --- Django Stuff ---
+*.log
+db.sqlite3
+media/
+staticfiles/
+static_root/
+migrations/__pycache__/
+*.pot
+*.pyc
+local_settings.py
+
+# --- PostgreSQL Dumps ---
+*.sql
+*.dump
+
+# --- IDE & Editor Files ---
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- System Files ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# --- Node / Frontend ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Build Artifacts ---
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# --- PyInstaller ---
+#  Usually created by pyinstaller for executables
+*.manifest
+*.spec
+
+# --- Logs & Caches ---
+*.log
+logs/
+*.cache/
+*.bak
+*.swp
+*.tmp
+*.temp
+*.pid
+
+# --- Coverage & Testing ---
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.cache
+pytest_cache/
+htmlcov/
+
+# --- Render / Heroku Deployments ---
+# Ignore build artifacts and temp deployment files
+*.tar.gz
+*.zip
+render.yaml
+heroku.yml
+
+# --- Docker ---
+docker-compose.override.yml
+Dockerfile.dev
+*.dockerfile
+.dockerignore
+
+# --- OS specific ---
+*.orig
+*.bak

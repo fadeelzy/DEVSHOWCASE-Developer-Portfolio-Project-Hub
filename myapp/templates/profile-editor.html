@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - DevShowcase</title>
+    <meta name="description" content="Edit your developer profile information">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="{% url 'dashboard' %}">DevShowcase</a></h1>
+            <nav>
+                <a href="{% url 'dashboard' %}" class="btn-secondary">Dashboard</a>
+                <a href="{% url 'logout' %}" class="btn-secondary">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="container">
+                <h2>Edit Profile</h2>
+                
+                <form id="profileForm" class="profile-form" method="POST">
+                    {% csrf_token %}
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" value="{{ profile.full_name|default_if_none:'' }}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="headline">Headline</label>
+                            <input type="text" id="headline" name="headline" value="{{ profile.headline|default_if_none:'' }}" placeholder="e.g., Full Stack Developer">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself...">{{ profile.bio|default_if_none:'' }}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photo">Photo URL</label>
+                            <input type="url" id="photo" name="photo" value="{{ profile.photo|default_if_none:'' }}" placeholder="https://...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Contact Email</label>
+                            <input type="email" id="email" name="email" value="{{ profile.email|default_if_none:user.email }}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Social Links</h3>
+                        
+                        <div class="form-group">
+                            <label for="github">GitHub</label>
+                            <input type="url" id="github" name="github" value="{{ profile.github|default_if_none:'' }}" placeholder="https://github.com/username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn</label>
+                            <input type="url" id="linkedin" name="linkedin" value="{{ profile.linkedin|default_if_none:'' }}" placeholder="https://linkedin.com/in/username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="twitter">Twitter/X</label>
+                            <input type="url" id="twitter" name="twitter" value="{{ profile.twitter|default_if_none:'' }}" placeholder="https://twitter.com/username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Personal Website</label>
+                            <input type="url" id="website" name="website" value="{{ profile.website|default_if_none:'' }}" placeholder="https://yourwebsite.com">
+                        </div>
+                    </div>
+
+                    <div class="form-section" id="skills">
+                        <h3>Technical Skills</h3>
+                        
+                        <div class="form-group">
+                            <label for="skillsInput">Skills (comma-separated)</label>
+                            <input type="text" id="skillsInput" name="skills" value="{{ profile.skills|default_if_none:'' }}" placeholder="Python, JavaScript, React, Node.js">
+                            <small>Separate skills with commas</small>
+                        </div>
+
+                        <div id="skillsDisplay" class="skills-display"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Profile</button>
+                        <a href="{% url 'dashboard' %}" class="btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="{% static 'profile.js' %}"></script>
+</body>
+</html>

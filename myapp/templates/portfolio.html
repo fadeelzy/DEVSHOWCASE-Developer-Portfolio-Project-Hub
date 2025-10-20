@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">{{ profile.name }} - Portfolio | DevShowcase</title>
+    <meta name="description" id="pageDescription" content="{{ profile.headline }}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body class="portfolio-view">
+    <header class="portfolio-header">
+        <div class="container">
+            <div class="portfolio-intro">
+                <img id="portfolioPhoto" src="{{ profile.photo }}" alt="Profile photo" class="portfolio-photo">
+                <div class="portfolio-info">
+                    <h1 id="portfolioName">{{ profile.name }}</h1>
+                    <p id="portfolioHeadline" class="headline">{{ profile.headline }}</p>
+                    <div id="portfolioSocial" class="social-links"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-section">
+            <div class="container">
+                <h2>About</h2>
+                <p id="portfolioBio" class="bio-text">{{ profile.bio }}</p>
+                
+                <div class="contact-info">
+                    <strong>Contact:</strong> 
+                    <a id="portfolioEmail" href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div id="portfolioSkills" class="skills-grid"></div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div id="portfolioProjects" class="portfolio-projects"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="portfolio-footer">
+        <div class="container">
+            <p>Built with <a href="{% url 'index' %}">DevShowcase</a></p>
+        </div>
+    </footer>
+
+    <script>
+       window.username = "{{ profile.user.username }}";
+    </script>
+    <script src="{% static 'portfolio.js' %}"></script>
+  
+</body>
+</html>
