@@ -32,4 +32,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Run Gunicorn
-CMD ["sh", "-c", "gunicorn resumeproject.wsgi:application --bind 0.0.0.0:${PORT}"]
+CMD ["sh", "-c", "gunicorn devproject.wsgi:application --bind 0.0.0.0:${PORT}"]
