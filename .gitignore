@@ -32,8 +32,6 @@ config.json
 *.log
 db.sqlite3
 media/
-staticfiles/
-static_root/
 migrations/__pycache__/
 *.pot
 *.pyc
