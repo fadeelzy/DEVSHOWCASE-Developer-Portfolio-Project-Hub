@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadPortfolio() {
         try {
-            const response = await fetch(`/api/portfolio/${username}/`);
+            const response = await fetch(`/dashboard/api/portfolio/${username}/`);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();
 

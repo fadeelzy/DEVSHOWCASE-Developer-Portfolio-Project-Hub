@@ -49,8 +49,8 @@
                     <div class="dashboard-card">
                         <h3>Portfolio Link</h3>
                         <p>
-                            <a href="{% url 'portfolio' user.username %}">
-                                {{ request.build_absolute_uri|slice:":-1" }}{% url 'portfolio' user.username %}
+                            <a href="{{ request.scheme }}://{{ request.get_host }}{% url 'portfolio' user.username %}">
+                                {{ request.scheme }}://{{ request.get_host }}{% url 'portfolio' user.username %}
                             </a>
                         </p>
                         <button onclick="copyPortfolioLink()" class="btn-secondary">Copy Link</button>
