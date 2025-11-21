@@ -1,6 +1,6 @@
 🧠 DEVSHOWCASE — Developer Portfolio & Project Hub
 
-DevShowcase is a full-stack web application built with Django and PostgreSQL that empowers developers to create, customize, and share professional portfolios.
+DevShowcase is a full-stack web application built with Django and MYSQL that empowers developers to create, customize, and share professional portfolios.
 It allows you to present your skills, projects, and professional identity with a sleek and dynamic interface — no coding required after setup.
 
 
@@ -25,7 +25,7 @@ https://devshowcase.com/fadeelzy
 Layer	Technology
 Frontend	HTML5, CSS3, JavaScript (Vanilla)
 Backend	Django (Python)
-Database	PostgreSQL
+Database	MYSQL (aiven)
 Version Control	Git & GitHub
 Deployment Ready For	Render / Vercel / Railway / Heroku
 Monitoring	Prometheus & Grafana (optional extension)
