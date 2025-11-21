@@ -9,25 +9,40 @@ It allows you to present your skills, projects, and professional identity with a
 🚀 Features
 
 ✅ Developer Portfolio Generator — automatically creates a portfolio page using your data.
+
 ✅ Project Showcase — add GitHub links, live demos, and images for each project.
+
 ✅ Custom Dashboard — edit your bio, skills, and social links seamlessly.
+
 ✅ AJAX-powered Profile Editor — instant save without page reloads.
+
 ✅ Responsive UI — modern HTML/CSS layout designed for all devices.
+
 ✅ PostgreSQL Integration — secure and production-ready relational database.
+
 ✅ Dynamic API Layer — JSON endpoints to power frontend interactivity.
+
 ✅ Authentication System — Django’s built-in user auth for signup/login/logout.
+
 ✅ Clean URL structure — SEO-friendly portfolio URLs like:
 
 https://devshowcase.com/fadeelzy
 
 
 🏗️ Tech Stack
+
 Layer	Technology
+
 Frontend	HTML5, CSS3, JavaScript (Vanilla)
+
 Backend	Django (Python)
+
 Database	MYSQL (aiven)
+
 Version Control	Git & GitHub
-Deployment Ready For	Render / Vercel / Railway / Heroku
+
+Deployment Ready For	Render
+
 Monitoring	Prometheus & Grafana (optional extension)
 
 ⚙️ Installation & Setup
@@ -61,26 +76,47 @@ python manage.py runserver
 Your app is live at 👉 http://127.0.0.1:8000
 
 🧩 Project Structure
+
 devshowcase/
+
 ├── myapp/
+
 │   ├── templates/
+
 │   │   ├── dashboard.html
+
 │   │   ├── profile-editor.html
+
 │   │   ├── portfolio.html
+
 │   │   └── project-editor.html
+
 │   ├── static/
+
 │   │   ├── styles.css
+
 │   │   ├── profile.js
+
 │   │   └── project.js
+
 │   ├── models.py
+
 │   ├── views.py
+
 │   ├── urls.py
+
 │   └── admin.py
+
 ├── devproject/
+
 │   ├── settings.py
+
 │   ├── urls.py
+
 │   └── wsgi.py
+
 ├── manage.py
+
 └── requirements.txt
 
 
@@ -105,19 +141,34 @@ This page dynamically loads your profile, bio, skills, and projects — powered 
 🧩 Database Schema (Simplified)
 
 Profile Model
+
+
 Field	Type	Description
+
 user	OneToOneField	Links to Django User
+
 headline	CharField	Short title (e.g. “Full Stack Developer”)
+
 bio	TextField	Developer bio
+
 photo	URLField	Profile image link
+
 skills	CharField	Comma-separated skills
+
 github, linkedin, twitter, website	URLFields	Optional social links
+
 Project Model
+
 Field	Type	Description
+
 profile	ForeignKey	Linked to Profile
+
 title	CharField	Project name
+
 description	TextField	What it does
+
 image	URLField	Thumbnail or screenshot
+
 github, demo	URLFields	Project links
 
 👨🏽‍💻 Author
