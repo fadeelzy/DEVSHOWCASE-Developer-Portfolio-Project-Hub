@@ -123,9 +123,13 @@ devshowcase/
 🧠 API Endpoints
 
 Endpoint	Method	Description
+
 /api/portfolio/<username>/	GET	Fetch user’s profile + projects
+
 /dashboard/	GET	View dashboard
+
 /profile-editor/	POST	Update profile
+
 /project-editor/	POST	Add new project
 
 🌟 Portfolio Preview
